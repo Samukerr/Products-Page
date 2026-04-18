@@ -10,7 +10,7 @@ export default function ProductList() {
   async function fetchProducts() {
     try {
       setLoading(true);
-      const res = await fetch("https://dummyjson.com/products?limit=20");
+      const res = await fetch("https://dummyjson.com/products?limit=10");
       const data = await res.json();
       setProducts(data.products);
     } catch {
