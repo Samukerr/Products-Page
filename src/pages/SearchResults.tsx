@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import type { Product } from "../types/product";
+import type { Product, ProductResponse } from "../types/product";
 
 export default function SearchResults() {
   const [params] = useSearchParams();
@@ -23,7 +23,7 @@ export default function SearchResults() {
         throw new Error("Failed to fetch results");
       }
 
-      const data = await response.json();
+      const data: ProductResponse = await response.json();
       setResults(data.products);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
